@@ -17,11 +17,33 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
-   
+    if (testInput.trim() === ""){
+        return "Empty";
+    } else if (isNaN(testInput)){
+        return "Not a Number";
+    } else {
+        return "Is a Number"
+    }
 }
 
+
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+   if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty"|| validateInput(cargoLevel) === "Empty"){
+    alert("all fields are required!"); 
+   }
+  else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number" || validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Not a Number")
+  alert("Please enter a valid name for Pilot and Copilot and a valid number for the Fuel Level and Cargo Mass ");
    
+  
+
+       // else fuel too low do this, cargo too high do this 
+       //nested else if block else both good to go do this 
+
+        //     alert("all fields are required!") 
+    // add all the staus's for the elemetns make variables for those elements to change the inner html. if else, wether the fields are filled in. CAll validate(input
+    // pass in parameter for pilot, co pilot etc. || 
+
+    
 }
 
 async function myFetch() {
