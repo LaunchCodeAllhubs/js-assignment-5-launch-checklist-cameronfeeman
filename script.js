@@ -10,7 +10,7 @@ window.addEventListener("load", function() {
                 event.preventDefault();
                 let list = document.getElementById("faultyItems")
                 formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) 
-
+                
 
         });
 
