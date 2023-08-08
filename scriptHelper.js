@@ -33,6 +33,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    }
   else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number" || validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Not a Number")
   alert("Please enter a valid name for Pilot and Copilot and a valid number for the Fuel Level and Cargo Mass ");
+  
    
   
 
