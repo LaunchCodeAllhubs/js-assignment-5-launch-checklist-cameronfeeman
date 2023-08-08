@@ -1,19 +1,19 @@
 // Write your helper functions here!
 require('isomorphic-fetch');
 
-function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
-   // Here is the HTML formatting for our mission target div.
-   /*
+function addDestinationInfo(document, name, diameter, star, distance, moons, image) {
+    let missionTarget = document.getElementById("missionTarget");
+  missionTarget.innerHTML = `
                 <h2>Mission Destination</h2>
                 <ol>
-                    <li>Name: </li>
-                    <li>Diameter: </li>
+                    <li>Name:${name}</li>
+                    <li>Diameter:${diameter}</li>
                     <li>Star: ${star}</li>
-                    <li>Distance from Earth: </li>
-                    <li>Number of Moons: </li>
+                    <li>Distance from Earth:${distance}</li>
+                    <li>Number of Moons: ${moons}</li>
                 </ol>
-                <img src="">
-   */
+                <img src="${image}" alt="${name}">
+`;
 }
 
 function validateInput(testInput) {
@@ -66,23 +66,22 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
  }
 }
 
-       // else fuel too low do this, cargo too high do this 
-       //nested else if block else both good to go do this 
-
-        //     alert("all fields are required!") 
-    // add all the staus's for the elemetns make variables for those elements to change the inner html. if else, wether the fields are filled in. CAll validate(input
-    // pass in parameter for pilot, co pilot etc. || 
 
 async function myFetch() {
     let planetsReturned;
 
-    planetsReturned = await fetch().then( function(response) {
-        });
+    planetsReturned = await fetch('https://handlers.education.launchcode.org/static/planets.json') 
+        const json = await planetsReturned.json();
+console.log(json)
 
     return planetsReturned;
 }
 
 function pickPlanet(planets) {
+
+let randomPlanet = Math.floor(Math.random() * planets.length);
+return planets[randomPlanet];
+
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
